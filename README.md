@@ -1,6 +1,6 @@
 # has-sc
 
-Tells if windows (sc)[https://technet.microsoft.com/en-us/library/bb490995.aspx] is vailable.
+Tells if windows [sc](https://technet.microsoft.com/en-us/library/bb490995.aspx) is vailable.
 
 ## Usage
 
