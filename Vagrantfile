@@ -1,18 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# box name into env var, same script can be used with different boxes. Defaults to win7-ie11.
-box_name = box_name = ENV['box_name'] != nil ? ENV['box_name'].strip : 'win7-ie11'
-# box repo into env var, so private repos/cache can be used. Defaults to http://aka.ms
-box_repo = ENV['box_repo'] != nil ? ENV['box_repo'].strip : 'http://aka.ms'
-
 Vagrant.configure("2") do |config|
 
   config.vm.define :win do |win|
-    # If the box is win7-ie11, the convention for the box name is modern.ie/win7-ie11
-    # win.vm.box = "modern.ie/" + box_name
-    # If the box is win7-ie11, the convention for the box url is http://aka.ms/vagrant-win7-ie11
-    # win.vm.box_url = box_repo + "/vagrant-" + box_name
 
     win.vm.box = "opentable/win-2012r2-standard-amd64-nocm"
 
