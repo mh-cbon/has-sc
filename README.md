@@ -5,8 +5,9 @@ Tells if windows [sc](https://technet.microsoft.com/en-us/library/bb490995.aspx)
 ## Usage
 
 ```js
-require('@mh-cbon/has-sc')(function (hasSc) {
-  console.log("This system runs sc : %s", hasSc?"yes":"no")
+require('@mh-cbon/has-sc')(function (err, scPath) {
+  console.log("This system runs sc : %s", err?"no":"yes");
+  scPath && console.log("Found sc at path : %s", scPath)
 })
 ```
 
