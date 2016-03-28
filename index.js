@@ -18,7 +18,7 @@ var runSc = function (whichBin, then) {
   It is super dirty because of weird behaviors of child_process.spawn('sc')
 the super stupid stuff. sc /? command will throw an interactive question at the end such:
 Would you like to see help for the QUERY and QUERYEX commands? [ y | n ]:
-Under normal terms, i would use stdin to write 'n\n' and thus let the program wuit normally,
+Under normal terms, i would use stdin to write 'n\n' and thus let the program quit normally,
 but that wont work, so trick trick trick trick !
   */
   s.stdout.on('data', function (data) {
