@@ -27,9 +27,9 @@ You can check windows execution output into `mocha-stderr.log` and `mocha-stdout
 To run the __linux__ tests on a fedora-like box,
 
 - download and install `vagrant`
-- download and install `mocha`
 - execute `npm run test-not-windows`
 
 or just
 
+- download and install `mocha`
 - `mocha tests/not-windows.js`
