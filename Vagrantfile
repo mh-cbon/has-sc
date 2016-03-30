@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
     # see https://www.vagrantup.com/downloads.html
 
     # rdp forward
+    config.vm.network :forwarded_port, guest: 3389, host: 33891, id: "rdp", auto_correct:true
 
     # winrm config, uses modern.ie default user/password. If other credentials are used must be changed here
     win.vm.communicator = :winrm
@@ -32,7 +33,7 @@ Vagrant.configure("2") do |config|
       vb.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000]
     end
 
-    config.vm.provision "shell", path: "node-setup.ps1"
+    config.vm.provision "shell", inline: ". C:\\vagrant\\node-setup.bat | Write-Output"
 
   end
 

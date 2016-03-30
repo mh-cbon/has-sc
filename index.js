@@ -32,12 +32,15 @@ but that wont work, so trick trick trick trick !
 }
 function hasSc(then) {
   if (!process.platform.match(/win/)) return then('not windows');
-  runSc('sc', function (code) {
-    if (code>0) return runSc('C:\\Windows\\System32\\sc.exe', function (code) {
-      if (code>0) then ('not found')
-      else then (undefined, 'C:\\Windows\\System32\\sc.exe')
+  var scPath = 'sc'
+  runSc(scPath, function (code) {
+    if (code===0) return then (undefined, scPath)
+    scPath = 'C:\\Windows\\System32\\sc.exe'
+    runSc(scPath, function (code) {
+      if (code===0) return then (undefined, scPath)
+      then ('not found')
     })
-    then (undefined, 'sc')
+
   })
 }
 module.exports = hasSc;
