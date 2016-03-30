@@ -1,3 +1,3 @@
-vagrant up win
-vagrant winrm win -c ". C:\\vagrant\\run-tests.bat | Write-Output"
-vagrant halt win
+vagrant up win2012
+vagrant winrm win2012 -c ". C:\\vagrant\\run-tests.bat | Write-Output"
+vagrant halt win2012

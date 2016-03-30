@@ -20,6 +20,7 @@ To run the __windows__ tests on a fedora-like box,
 - download and install [vagrant from their website](https://www.vagrantup.com/downloads.html), do not use distrib package. WinRM is somehow broken at that day.
 - install [winrm plugin](https://github.com/criteo/vagrant-winrm): `vagrant plugin install vagrant-winrm`
 - execute `npm run test-windows`
+- wait, a looooooonnnnggggg time. Windows images are very big....
 
 
 #### linux
@@ -32,6 +33,18 @@ or just
 
 - download and install `mocha`
 - `mocha test/not-windows.js`
+
+## TODOS
+
+- add tests for win7
+- add tests for win8
+- add tests for win10
+- add tests for win2008 server
+- add tests for vista ?
+
+The problem is mostly about finding / building vagrant boxes of those OS.
+
+If you run some of those systems, i d be happy if you run the tests and communicate the results.
 
 ## Notes
 
