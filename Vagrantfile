@@ -27,25 +27,6 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", inline: ". C:\\vagrant\\node-setup.bat | Write-Output"
   end
 
-  config.vm.define :win8 do |win|
-    win.vm.box = "opentable/win-8-pro-amd64-nocm"
-    win.vm.boot_timeout = 500
-    win.vm.communicator = :winrm
-    # win.winrm.username = "IEUser"
-    # win.winrm.password = "Passw0rd!"
-    win.vm.provider "virtualbox" do |vb|
-      # first setup requires gui to be enabled so scripts can be executed in virtualbox guest screen
-      #vb.gui = true
-      vb.customize ["modifyvm", :id, "--memory", "1024"]
-      vb.customize ["modifyvm", :id, "--vram", "128"]
-      vb.customize ["modifyvm", :id,  "--cpus", "1"]
-      vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
-      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-      vb.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000]
-    end
-    config.vm.provision "shell", inline: ". C:\\vagrant\\node-setup.bat | Write-Output"
-  end
-
   config.vm.define "fedora" do |fedora|
     fedora.vm.box = "fedora/23-cloud-base"
 
