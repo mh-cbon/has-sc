@@ -1,6 +1,6 @@
 {
   "name": "@mh-cbon/has-sc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tells if windows SC is available",
   "main": "index.js",
   "scripts": {
