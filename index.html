@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Has-sc by mh-cbon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Has-sc</h1>
+      <h2 class="project-tagline">tells if a system runs windows sc service manager</h2>
+      <a href="https://github.com/mh-cbon/has-sc" class="btn">View on GitHub</a>
+      <a href="https://github.com/mh-cbon/has-sc/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mh-cbon/has-sc/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="has-sc" class="anchor" href="#has-sc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>has-sc</h1>
+
+<p>Tells if windows <a href="https://technet.microsoft.com/en-us/library/bb490995.aspx">sc</a> is vailable.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>@mh-cbon/has-sc<span class="pl-pds">'</span></span>)(<span class="pl-k">function</span> (<span class="pl-smi">err</span>, <span class="pl-smi">scPath</span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>This system runs sc : %s<span class="pl-pds">"</span></span>, err<span class="pl-k">?</span><span class="pl-s"><span class="pl-pds">"</span>no<span class="pl-pds">"</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>yes<span class="pl-pds">"</span></span>);
+  scPath <span class="pl-k">&amp;&amp;</span> <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>Found sc at path : %s<span class="pl-pds">"</span></span>, scPath)
+})</pre></div>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h2>
+
+<h4>
+<a id="windows" class="anchor" href="#windows" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>windows</h4>
+
+<p>To run the <strong>windows</strong> tests on a fedora-like box,</p>
+
+<ul>
+<li>download and install <a href="https://www.vagrantup.com/downloads.html">vagrant from their website</a>, do not use distrib package. WinRM is somehow broken at that day.</li>
+<li>install <a href="https://github.com/criteo/vagrant-winrm">winrm plugin</a>: <code>vagrant plugin install vagrant-winrm</code>
+</li>
+<li>execute <code>npm run test-windows</code>
+</li>
+<li>wait, a looooooonnnnggggg time. Windows images are very big....</li>
+</ul>
+
+<h4>
+<a id="linux" class="anchor" href="#linux" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>linux</h4>
+
+<p>To run the <strong>linux</strong> tests on a fedora-like box,</p>
+
+<ul>
+<li>download and install <code>vagrant</code>
+</li>
+<li>execute <code>npm run test-not-windows</code>
+</li>
+</ul>
+
+<p>or just</p>
+
+<ul>
+<li>download and install <code>mocha</code>
+</li>
+<li><code>mocha test/not-windows.js</code></li>
+</ul>
+
+<h2>
+<a id="todos" class="anchor" href="#todos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODOS</h2>
+
+<ul>
+<li>add tests for win7</li>
+<li>add tests for win8</li>
+<li>add tests for win10</li>
+<li>add tests for win2008 server</li>
+<li>add tests for vista ?</li>
+</ul>
+
+<p>The problem is mostly about finding / building vagrant boxes of those OS.</p>
+
+<p>If you run some of those systems, i d be happy if you run the tests and communicate the results.</p>
+
+<h2>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notes</h2>
+
+<p>A static build version of <code>wget</code> is included in this repository for testing purposes on windows.</p>
+
+<p>The reasons are :</p>
+
+<ul>
+<li>power shell is not a reliable tool to do so because it provides such thing only from version 3.0</li>
+<li>windows does not provide alternative to power shell capabilities</li>
+<li>i was lazy to write a statically built C component</li>
+<li>it exists.</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/mh-cbon/has-sc">Has-sc</a> is maintained by <a href="https://github.com/mh-cbon">mh-cbon</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
