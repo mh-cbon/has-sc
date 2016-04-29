@@ -7,9 +7,9 @@ var runSc = function (whichBin, then) {
     s.kill();
   }, 1500)
   s.on('close', function (code) {
-    s.stdout.close();
-    s.stderr.close();
-    s.stdin.close();
+    s.stdout.end();
+    s.stderr.end();
+    s.stdin.end();
     clearTimeout(itMustEnd);
     then && then(code);
   });

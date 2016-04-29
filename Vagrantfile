@@ -3,7 +3,6 @@
 
 Vagrant.configure("2") do |config|
 
-
   # on fedora-like, you must use the downloadable package of vagrant
   # available on hashi corp website.
   # The per distrib provided package wont provide winrm support..
@@ -16,7 +15,7 @@ Vagrant.configure("2") do |config|
     win.vm.communicator = :winrm
     win.vm.provider "virtualbox" do |vb|
       # first setup requires gui to be enabled so scripts can be executed in virtualbox guest screen
-      #vb.gui = true
+      # vb.gui = true
       vb.customize ["modifyvm", :id, "--memory", "1024"]
       vb.customize ["modifyvm", :id, "--vram", "128"]
       vb.customize ["modifyvm", :id,  "--cpus", "1"]
